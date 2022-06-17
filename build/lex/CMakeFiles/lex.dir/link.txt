@@ -1,0 +1,2 @@
+/usr/bin/ar cr liblex.a  CMakeFiles/lex.dir/pl0_lex.c.o
+/usr/bin/ranlib liblex.a

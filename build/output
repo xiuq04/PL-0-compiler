@@ -1,0 +1,2441 @@
+=== This is the program for PL/0 testing ===
+--- Lexical Analysis testing ---
+ $ A 
+ $ . B 
+ $ . B S 
+analysis the program block
+ $ . B S SEMICOLON V const 
+ $ . B S SEMICOLON V 
+29:const
+ $ . B S SEMICOLON E NUMBER = ident 
+ $ . B S SEMICOLON E NUMBER = 
+1:const m
+ $ . B S SEMICOLON E NUMBER 
+8:const m =
+ $ . B S SEMICOLON E number 
+ $ . B S SEMICOLON E 
+2:const m = 7
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+16:const m = 7,
+ $ . B S SEMICOLON E NUMBER = ident 
+ $ . B S SEMICOLON E NUMBER = 
+1:const m = 7, n
+ $ . B S SEMICOLON E NUMBER 
+8:const m = 7, n =
+ $ . B S SEMICOLON E number 
+ $ . B S SEMICOLON E 
+2:const m = 7, n = 85
+ $ . B S SEMICOLON 
+ $ . B S 
+28:var
+ $ . B S SEMICOLON V var 
+ $ . B S SEMICOLON V 
+ $ . B S SEMICOLON E T ident 
+ $ . B S SEMICOLON E T 
+1:var x
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+16:var x,
+ $ . B S SEMICOLON E T ident 
+ $ . B S SEMICOLON E T 
+1:var x, y
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+16:var x, y,
+ $ . B S SEMICOLON E T ident 
+ $ . B S SEMICOLON E T 
+1:var x, y, z
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+16:var x, y, z,
+ $ . B S SEMICOLON E T ident 
+ $ . B S SEMICOLON E T 
+1:var x, y, z, q
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON 
+ $ . B S 
+ $ . B S SEMICOLON V const 
+ $ . B S SEMICOLON V 
+29:const
+ $ . B S SEMICOLON 
+ $ . B S 
+17:const ; 
+ $ . B S SEMICOLON S SEMICOLON ident PROCEDURE 
+ $ . B S SEMICOLON S SEMICOLON ident 
+30:procedure
+ $ . B S SEMICOLON S SEMICOLON 
+ $ . B S SEMICOLON S 
+17:procedure ; 
+analysis the program block
+28:var
+ $ . B S SEMICOLON S SEMICOLON V var 
+ $ . B S SEMICOLON S SEMICOLON V 
+ $ . B S SEMICOLON S SEMICOLON E T ident 
+ $ . B S SEMICOLON S SEMICOLON E T 
+1:var a
+ $ . B S SEMICOLON S SEMICOLON E 
+ $ . B S SEMICOLON S SEMICOLON V COMMA 
+ $ . B S SEMICOLON S SEMICOLON V 
+16:var a,
+ $ . B S SEMICOLON S SEMICOLON E T ident 
+ $ . B S SEMICOLON S SEMICOLON E T 
+1:var a, b
+ $ . B S SEMICOLON S SEMICOLON E 
+ $ . B S SEMICOLON S SEMICOLON 
+ $ . B S SEMICOLON S 
+17:var a, b;
+ $ . B S SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O begin 
+ $ . B S SEMICOLON end O 
+31:begin
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON D := T 
+1:	a
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+19:	a :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q T 
+1:	a := x;
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	a := x;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON D := T 
+1:	a := x; b
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+19:	a := x; b :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q T 
+1:	a := x; b := y;
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	a := x; b := y;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON D := T 
+1:	a := x; b := y; z 
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+19:	a := x; b := y; z :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+2:	a := x; b := y; z := 0
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	a := x; b := y; z := 0;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON P do W while 
+ $ . B S SEMICOLON end O SEMICOLON P do W 
+36:	while
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON P do U J 
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q T 
+1:	while b
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON P do U D GTR 
+ $ . B S SEMICOLON end O SEMICOLON P do U D 
+12:	while b >
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do U Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q 
+2:	while b > 0
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do U Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do U 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON P do 
+end of condition
+ $ . B S SEMICOLON end O SEMICOLON P 
+35:	while b > 0 do
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O begin 
+ $ . B S SEMICOLON end O SEMICOLON end O 
+31:	begin
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W if 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W 
+33:		if
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U J 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D odd 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D 
+38:		if odd
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T 
+1:		if odd b
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then 
+end of condition
+34:		if odd b then
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T 
+1:		if odd b then z 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D 
+19:		if odd b then z :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if odd b then z := z 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I PLUS 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+4:		if odd b then z := z +
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if odd b then z := z + a
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H TIMES 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+6:		if odd b then z := z + a *
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+2:		if odd b then z := z + a * 1
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+17:		if odd b then z := z + a * 1;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:		a
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:		a :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+2:		a := 2
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H TIMES 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+6:		a := 2 *
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T 
+1:		a := 2 * a
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:		a := 2 * a;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:		a := 2 * a; b
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:		a := 2 * a; b :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T 
+1:		a := 2 * a; b := b
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H SLASH 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+7:		a := 2 * a; b := b /
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+2:		a := 2 * a; b := b / 2
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:		a := 2 * a; b := b / 2;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+end of statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end 
+32:	end
+ $ . B S SEMICOLON end O SEMICOLON 
+end of statement
+end of statement
+17:	end;
+ $ . B S SEMICOLON end O 
+end of statement sequence
+ $ . B S SEMICOLON end 
+32:end
+ $ . B S SEMICOLON 
+end of statement
+end of program blook
+ $ . B S 
+17:end;
+ $ . B S SEMICOLON S SEMICOLON ident PROCEDURE 
+ $ . B S SEMICOLON S SEMICOLON ident 
+30:procedure
+ $ . B S SEMICOLON S SEMICOLON 
+1:procedure gcd
+ $ . B S SEMICOLON S 
+17:procedure gcd;
+analysis the program block
+28:var
+ $ . B S SEMICOLON S SEMICOLON V var 
+ $ . B S SEMICOLON S SEMICOLON V 
+ $ . B S SEMICOLON S SEMICOLON 
+ $ . B S SEMICOLON S 
+17:var ; 
+ $ . B S SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O begin 
+ $ . B S SEMICOLON end O 
+31:begin
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON D := T 
+1:	f 
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q T 
+1:	f x;
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	f x;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON D := T 
+1:	g 
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+19:	g :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q T 
+1:	g := y;
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	g := y;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON P do W while 
+ $ . B S SEMICOLON end O SEMICOLON P do W 
+36:	while
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON P do U J 
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q T 
+1:	while f 
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON P do U D NEQ 
+ $ . B S SEMICOLON end O SEMICOLON P do U D 
+9:	while f !=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do U Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q T 
+1:	while f != g 
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do U Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do U 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON P do 
+end of condition
+ $ . B S SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O begin 
+ $ . B S SEMICOLON end O SEMICOLON end O 
+31:	begin
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W if 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W 
+33:		if
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U J 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q T 
+1:		if f 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D LES 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D 
+10:		if f <
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T 
+1:		if f < g 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then 
+end of condition
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T 
+1:		if f < g  g 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D 
+19:		if f < g  g :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if f < g  g := g 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I MINUS 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+5:		if f < g  g := g -
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if f < g  g := g - f;
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+17:		if f < g  g := g - f;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W if 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W 
+33:		if
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U J 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q T 
+1:		if g 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D LES 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D 
+10:		if g <
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T 
+1:		if g < f 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then 
+end of condition
+34:		if g < f then
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T 
+1:		if g < f then f 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D 
+19:		if g < f then f :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if g < f then f := f 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I MINUS 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+5:		if g < f then f := f -
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if g < f then f := f - g;
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+17:		if g < f then f := f - g;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+end of statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end 
+32:end
+ $ . B S SEMICOLON end O SEMICOLON 
+end of statement
+end of statement
+17:end;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O begin 
+ $ . B S SEMICOLON end O SEMICOLON end O 
+31:begin
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:	x 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:	x :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T 
+1:	x := m;
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	x := m;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:	x := m; y 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:	x := m; y :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T 
+1:	x := m; y := n;
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	x := m; y := n;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON ident call 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON ident 
+37:	x := m; y := n; call
+1:	x := m; y := n; call multiply;
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+17:	x := m; y := n; call multiply;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:	x 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:	x :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+2:	x := 34
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	x := 34;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:	x := 34; y 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:	x := 34; y :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+2:	x := 34; y := 36
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	x := 34; y := 36;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON ident call 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON ident 
+37:	x := 34; y := 36; call
+1:	x := 34; y := 36; call gcd;
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+17:	x := 34; y := 36; call gcd;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+end of statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end 
+32:end
+ $ . B S SEMICOLON end O SEMICOLON 
+end of statement
+ $ . B S SEMICOLON end O 
+end of statement sequence
+ $ . B S SEMICOLON end 
+ $ . B S SEMICOLON 
+end of statement
+end of program blook
+ $ . B S 
+ $ . B P 
+analysis the statement
+ $ . B 
+end of statement
+end of program blook
+ $ . 
+ $ 
+the program has been analysised
+=== Normal end for testing. ===
+=== This is the program for PL/0 testing ===
+--- Lexical Analysis testing ---
+ $ A 
+ $ . B 
+ $ . B S 
+analysis the program block
+ $ . B S SEMICOLON V const 
+ $ . B S SEMICOLON V 
+29:const
+ $ . B S SEMICOLON E NUMBER = ident 
+ $ . B S SEMICOLON E NUMBER = 
+1:const m
+ $ . B S SEMICOLON E NUMBER 
+8:const m =
+ $ . B S SEMICOLON E number 
+ $ . B S SEMICOLON E 
+2:const m = 7
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+16:const m = 7,
+ $ . B S SEMICOLON E NUMBER = ident 
+ $ . B S SEMICOLON E NUMBER = 
+1:const m = 7, n
+ $ . B S SEMICOLON E NUMBER 
+8:const m = 7, n =
+ $ . B S SEMICOLON E number 
+ $ . B S SEMICOLON E 
+2:const m = 7, n = 85
+ $ . B S SEMICOLON 
+ $ . B S 
+28:var
+ $ . B S SEMICOLON V var 
+ $ . B S SEMICOLON V 
+ $ . B S SEMICOLON E T ident 
+ $ . B S SEMICOLON E T 
+1:var x
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+16:var x,
+ $ . B S SEMICOLON E T ident 
+ $ . B S SEMICOLON E T 
+1:var x, y
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+16:var x, y,
+ $ . B S SEMICOLON E T ident 
+ $ . B S SEMICOLON E T 
+1:var x, y, z
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+16:var x, y, z,
+ $ . B S SEMICOLON E T ident 
+ $ . B S SEMICOLON E T 
+1:var x, y, z, q
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON 
+ $ . B S 
+ $ . B S SEMICOLON V const 
+ $ . B S SEMICOLON V 
+29:const
+ $ . B S SEMICOLON 
+ $ . B S 
+17:const ; 
+ $ . B S SEMICOLON S SEMICOLON ident PROCEDURE 
+ $ . B S SEMICOLON S SEMICOLON ident 
+30:procedure
+ $ . B S SEMICOLON S SEMICOLON 
+ $ . B S SEMICOLON S 
+17:procedure ; 
+analysis the program block
+28:var
+ $ . B S SEMICOLON S SEMICOLON V var 
+ $ . B S SEMICOLON S SEMICOLON V 
+ $ . B S SEMICOLON S SEMICOLON E T ident 
+ $ . B S SEMICOLON S SEMICOLON E T 
+1:var a
+ $ . B S SEMICOLON S SEMICOLON E 
+ $ . B S SEMICOLON S SEMICOLON V COMMA 
+ $ . B S SEMICOLON S SEMICOLON V 
+16:var a,
+ $ . B S SEMICOLON S SEMICOLON E T ident 
+ $ . B S SEMICOLON S SEMICOLON E T 
+1:var a, b
+ $ . B S SEMICOLON S SEMICOLON E 
+ $ . B S SEMICOLON S SEMICOLON 
+ $ . B S SEMICOLON S 
+17:var a, b;
+ $ . B S SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O begin 
+ $ . B S SEMICOLON end O 
+31:begin
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON D := T 
+1:	a
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+19:	a :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q T 
+1:	a := x;
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	a := x;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON D := T 
+1:	a := x; b
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+19:	a := x; b :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q T 
+1:	a := x; b := y;
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	a := x; b := y;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON D := T 
+1:	a := x; b := y; z 
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+19:	a := x; b := y; z :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+2:	a := x; b := y; z := 0
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	a := x; b := y; z := 0;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON P do W while 
+ $ . B S SEMICOLON end O SEMICOLON P do W 
+36:	while
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON P do U J 
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q T 
+1:	while b
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON P do U D GTR 
+ $ . B S SEMICOLON end O SEMICOLON P do U D 
+12:	while b >
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do U Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q 
+2:	while b > 0
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do U Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do U 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON P do 
+end of condition
+ $ . B S SEMICOLON end O SEMICOLON P 
+35:	while b > 0 do
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O begin 
+ $ . B S SEMICOLON end O SEMICOLON end O 
+31:	begin
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W if 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W 
+33:		if
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U J 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D odd 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D 
+38:		if odd
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T 
+1:		if odd b
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then 
+end of condition
+34:		if odd b then
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T 
+1:		if odd b then z 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D 
+19:		if odd b then z :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if odd b then z := z 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I PLUS 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+4:		if odd b then z := z +
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if odd b then z := z + a
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H TIMES 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+6:		if odd b then z := z + a *
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+2:		if odd b then z := z + a * 1
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+15:		if odd b then z := z + a * 1);
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+end of statement
+17:		if odd b then z := z + a * 1); 
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:		a
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:		a :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+2:		a := 2
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H TIMES 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+6:		a := 2 *
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T 
+1:		a := 2 * a
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:		a := 2 * a;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:		a := 2 * a; b
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:		a := 2 * a; b :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T 
+1:		a := 2 * a; b := b
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H SLASH 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+7:		a := 2 * a; b := b /
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+2:		a := 2 * a; b := b / 2
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:		a := 2 * a; b := b / 2;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+end of statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end 
+32:	end
+ $ . B S SEMICOLON end O SEMICOLON 
+end of statement
+end of statement
+17:	end;
+ $ . B S SEMICOLON end O 
+end of statement sequence
+ $ . B S SEMICOLON end 
+32:end
+ $ . B S SEMICOLON 
+end of statement
+end of program blook
+ $ . B S 
+17:end;
+ $ . B S SEMICOLON S SEMICOLON ident PROCEDURE 
+ $ . B S SEMICOLON S SEMICOLON ident 
+30:procedure
+ $ . B S SEMICOLON S SEMICOLON 
+1:procedure gcd
+ $ . B S SEMICOLON S 
+17:procedure gcd;
+analysis the program block
+28:var
+ $ . B S SEMICOLON S SEMICOLON V var 
+ $ . B S SEMICOLON S SEMICOLON V 
+ $ . B S SEMICOLON S SEMICOLON 
+ $ . B S SEMICOLON S 
+17:var ; 
+ $ . B S SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O begin 
+ $ . B S SEMICOLON end O 
+31:begin
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON D := T 
+1:	f 
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q T 
+1:	f x;
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	f x;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON D := T 
+1:	g 
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+19:	g :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q T 
+1:	g := y;
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	g := y;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON P do W while 
+ $ . B S SEMICOLON end O SEMICOLON P do W 
+36:	while
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON P do U J 
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q T 
+1:	while f 
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON P do U D NEQ 
+ $ . B S SEMICOLON end O SEMICOLON P do U D 
+9:	while f !=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do U Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q T 
+1:	while f != g 
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do U Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do U 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON P do 
+end of condition
+ $ . B S SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O begin 
+ $ . B S SEMICOLON end O SEMICOLON end O 
+31:	begin
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W if 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W 
+33:		if
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U J 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q T 
+1:		if f 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D LES 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D 
+10:		if f <
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T 
+1:		if f < g 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then 
+end of condition
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T 
+1:		if f < g  g 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D 
+19:		if f < g  g :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if f < g  g := g 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I MINUS 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+5:		if f < g  g := g -
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if f < g  g := g - f;
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+17:		if f < g  g := g - f;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W if 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W 
+33:		if
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U J 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q T 
+1:		if g 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D LES 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D 
+10:		if g <
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T 
+1:		if g < f 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then 
+end of condition
+34:		if g < f then
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T 
+1:		if g < f then f 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D 
+19:		if g < f then f :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if g < f then f := f 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I MINUS 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+5:		if g < f then f := f -
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if g < f then f := f - g;
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+17:		if g < f then f := f - g;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+end of statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end 
+32:end
+ $ . B S SEMICOLON end O SEMICOLON 
+end of statement
+end of statement
+17:end;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O begin 
+ $ . B S SEMICOLON end O SEMICOLON end O 
+31:begin
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:	x 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:	x :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T 
+1:	x := m;
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	x := m;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:	x := m; y 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:	x := m; y :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T 
+1:	x := m; y := n;
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	x := m; y := n;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON ident call 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON ident 
+37:	x := m; y := n; call
+1:	x := m; y := n; call multiply;
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+17:	x := m; y := n; call multiply;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:	x 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:	x :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+2:	x := 34
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	x := 34;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:	x := 34; y 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:	x := 34; y :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+2:	x := 34; y := 36
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	x := 34; y := 36;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON ident call 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON ident 
+37:	x := 34; y := 36; call
+1:	x := 34; y := 36; call gcd;
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+17:	x := 34; y := 36; call gcd;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+end of statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end 
+32:end
+ $ . B S SEMICOLON end O SEMICOLON 
+end of statement
+ $ . B S SEMICOLON end O 
+end of statement sequence
+ $ . B S SEMICOLON end 
+ $ . B S SEMICOLON 
+end of statement
+end of program blook
+ $ . B S 
+ $ . B P 
+analysis the statement
+ $ . B 
+end of statement
+end of program blook
+ $ . 
+ $ 
+the program has been analysised
+=== Normal end for testing. ===
+=== This is the program for PL/0 testing ===
+--- Lexical Analysis testing ---
+ $ A 
+ $ . B 
+ $ . B S 
+analysis the program block
+ $ . B S SEMICOLON V const 
+ $ . B S SEMICOLON V 
+29:const
+ $ . B S SEMICOLON E NUMBER = ident 
+ $ . B S SEMICOLON E NUMBER = 
+1:const m
+ $ . B S SEMICOLON E NUMBER 
+8:const m =
+ $ . B S SEMICOLON E number 
+ $ . B S SEMICOLON E 
+2:const m = 7
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+16:const m = 7,
+ $ . B S SEMICOLON E NUMBER = ident 
+ $ . B S SEMICOLON E NUMBER = 
+1:const m = 7, n
+ $ . B S SEMICOLON E NUMBER 
+8:const m = 7, n =
+ $ . B S SEMICOLON E number 
+ $ . B S SEMICOLON E 
+2:const m = 7, n = 85
+ $ . B S SEMICOLON 
+ $ . B S 
+28:var
+ $ . B S SEMICOLON V var 
+ $ . B S SEMICOLON V 
+ $ . B S SEMICOLON E T ident 
+ $ . B S SEMICOLON E T 
+1:var x
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+16:var x,
+ $ . B S SEMICOLON E T ident 
+ $ . B S SEMICOLON E T 
+1:var x, y
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+16:var x, y,
+ $ . B S SEMICOLON E T ident 
+ $ . B S SEMICOLON E T 
+1:var x, y, z
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+16:var x, y, z,
+ $ . B S SEMICOLON E T ident 
+ $ . B S SEMICOLON E T 
+1:var x, y, z, q
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON 
+ $ . B S 
+ $ . B S SEMICOLON V const 
+ $ . B S SEMICOLON V 
+29:const
+ $ . B S SEMICOLON 
+ $ . B S 
+17:const ; 
+ $ . B S SEMICOLON S SEMICOLON ident PROCEDURE 
+ $ . B S SEMICOLON S SEMICOLON ident 
+30:procedure
+ $ . B S SEMICOLON S SEMICOLON 
+ $ . B S SEMICOLON S 
+17:procedure ; 
+analysis the program block
+28:var
+ $ . B S SEMICOLON S SEMICOLON V var 
+ $ . B S SEMICOLON S SEMICOLON V 
+ $ . B S SEMICOLON S SEMICOLON E T ident 
+ $ . B S SEMICOLON S SEMICOLON E T 
+1:var a
+ $ . B S SEMICOLON S SEMICOLON E 
+ $ . B S SEMICOLON S SEMICOLON V COMMA 
+ $ . B S SEMICOLON S SEMICOLON V 
+16:var a,
+ $ . B S SEMICOLON S SEMICOLON E T ident 
+ $ . B S SEMICOLON S SEMICOLON E T 
+1:var a, b
+ $ . B S SEMICOLON S SEMICOLON E 
+ $ . B S SEMICOLON S SEMICOLON 
+ $ . B S SEMICOLON S 
+17:var a, b;
+ $ . B S SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O begin 
+ $ . B S SEMICOLON end O 
+31:begin
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON D := T 
+1:	a
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+19:	a :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q T 
+1:	a := x
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	a := x;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON D := T 
+1:	a := x; b
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+19:	a := x; b :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q T 
+1:	a := x; b := y
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	a := x; b := y;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON D := T 
+1:	a := x; b := y; z
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+19:	a := x; b := y; z :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+2:	a := x; b := y; z := 0
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	a := x; b := y; z := 0;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON P do W while 
+ $ . B S SEMICOLON end O SEMICOLON P do W 
+36:	while
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON P do U J 
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q T 
+1:	while b
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON P do U D GTR 
+ $ . B S SEMICOLON end O SEMICOLON P do U D 
+12:	while b >
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do U Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q 
+2:	while b > 0
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do U Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do U 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON P do 
+end of condition
+ $ . B S SEMICOLON end O SEMICOLON P 
+35:	while b > 0 do
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O begin 
+ $ . B S SEMICOLON end O SEMICOLON end O 
+31:	begin
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W if 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W 
+33:		if
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U J 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D odd 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D 
+38:		if odd
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T 
+1:		if odd b
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then 
+end of condition
+34:		if odd b then
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T 
+1:		if odd b then z
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D 
+19:		if odd b then z :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if odd b then z := z
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I PLUS 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+4:		if odd b then z := z +
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if odd b then z := z + a
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H TIMES 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+6:		if odd b then z := z + a *
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+2:		if odd b then z := z + a * 1
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+15:		if odd b then z := z + a * 1);
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+end of statement
+17:		if odd b then z := z + a * 1); 
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:		a
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:		a :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+2:		a := 2
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H TIMES 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+6:		a := 2 *
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T 
+1:		a := 2 * a
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:		a := 2 * a;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:		a := 2 * a; b
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:		a := 2 * a; b :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T 
+1:		a := 2 * a; b := b
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H SLASH 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+7:		a := 2 * a; b := b /
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+2:		a := 2 * a; b := b / 2
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:		a := 2 * a; b := b / 2;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+end of statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end 
+32:	end
+ $ . B S SEMICOLON end O SEMICOLON 
+end of statement
+end of statement
+17:	end;
+ $ . B S SEMICOLON end O 
+end of statement sequence
+ $ . B S SEMICOLON end 
+32:end
+ $ . B S SEMICOLON 
+end of statement
+end of program blook
+ $ . B S 
+17:end;
+ $ . B S SEMICOLON S SEMICOLON ident PROCEDURE 
+ $ . B S SEMICOLON S SEMICOLON ident 
+30:procedure
+ $ . B S SEMICOLON S SEMICOLON 
+1:procedure gcd
+ $ . B S SEMICOLON S 
+17:procedure gcd;
+analysis the program block
+28:var
+ $ . B S SEMICOLON S SEMICOLON V var 
+ $ . B S SEMICOLON S SEMICOLON V 
+ $ . B S SEMICOLON S SEMICOLON 
+ $ . B S SEMICOLON S 
+17:var ; 
+ $ . B S SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O begin 
+ $ . B S SEMICOLON end O 
+31:begin
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON D := T 
+1:	f 
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q T 
+1:	f x;
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	f x;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON D := T 
+1:	g 
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+19:	g :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q T 
+1:	g := y
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	g := y;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON P do W while 
+ $ . B S SEMICOLON end O SEMICOLON P do W 
+36:	while
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON P do U J 
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q T 
+1:	while f 
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do U D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON P do U D NEQ 
+ $ . B S SEMICOLON end O SEMICOLON P do U D 
+9:	while f !=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do U Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q T 
+1:	while f != g 
+ $ . B S SEMICOLON end O SEMICOLON P do U Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do U Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do U 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON P do 
+end of condition
+ $ . B S SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O begin 
+ $ . B S SEMICOLON end O SEMICOLON end O 
+31:	begin
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W if 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W 
+33:		if
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U J 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q T 
+1:		if f 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D LES 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D 
+10:		if f <
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T 
+1:		if f < g 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then 
+end of condition
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T 
+1:		if f < g  g 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D 
+19:		if f < g  g :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if f < g  g := g 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I MINUS 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+5:		if f < g  g := g -
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if f < g  g := g - f;
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+17:		if f < g  g := g - f;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W if 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then W 
+33:		if
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U J 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q T 
+1:		if g 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D LES 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U D 
+10:		if g <
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q T 
+1:		if g < f 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then U 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P then 
+end of condition
+34:		if g < f then
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := T 
+1:		if g < f then f 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R D 
+19:		if g < f then f :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if g < f then f := f 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I MINUS 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z I 
+5:		if g < f then f := f -
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q T 
+1:		if g < f then f := f - g;
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON R 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+17:		if g < f then f := f - g;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+end of statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end 
+32:	end
+ $ . B S SEMICOLON end O SEMICOLON 
+end of statement
+end of statement
+17:	end;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON 
+end of statement
+17:;
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O begin 
+ $ . B S SEMICOLON end O SEMICOLON end O 
+31:begin
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:	x
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:	x :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T 
+1:	x := m
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	x := m;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:	x := m; y
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:	x := m; y :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q T 
+1:	x := m; y := n
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	x := m; y := n;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON ident call 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON ident 
+37:	x := m; y := n; call
+1:	x := m; y := n; call multiply;
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+17:	x := m; y := n; call multiply;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:	x
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:	x :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+2:	x := 34
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	x := 34;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := T 
+1:	x := 34; y
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+19:	x := 34; y :=
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+2:	x := 34; y := 36
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+17:	x := 34; y := 36;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON ident call 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON ident 
+37:	x := 34; y := 36; call
+1:	x := 34; y := 36; call gcd
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of statement
+17:	x := 34; y := 36; call gcd;
+ $ . B S SEMICOLON end O SEMICOLON end O 
+end of statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end 
+32:end
+ $ . B S SEMICOLON end O SEMICOLON 
+end of statement
+17:;
+ $ . B S SEMICOLON end O 
+end of statement sequence
+ $ . B S SEMICOLON end 
+ $ . B S SEMICOLON 
+end of statement
+end of program blook
+ $ . B S 
+ $ . B P 
+analysis the statement
+ $ . B 
+end of statement
+end of program blook
+ $ . 
+ $ 
+the program has been analysised
+=== Normal end for testing. ===
