@@ -1,0 +1,24 @@
+var i;
+
+procedure q;
+begin
+  i := i + 1;
+  return (i + 1);
+end;
+
+procedure p;
+var i;
+begin
+  i := 2;
+  call q;
+  i := call q;
+end;
+
+begin
+  i := 1;
+  call p;
+  call q;
+  print i;
+end.
+
+

@@ -1,0 +1,123 @@
+void condition2(PL0Lex * lex){//deal with J
+        if (lex->last_token_type == TOKEN_IDENTIFIER || lex->last_token_type == TOKEN_NUMBER || lex->last_token_type == TOKEN_MINUS || lex->last_token_type == TOKEN_LPAREN  || lex->last_token_type == TOKEN_GLPAREN || lex->last_token_type == TOKEN_ODD) {
+                if (lex->last_token_type == TOKEN_ODD) {
+                        pop();
+                        push("D");
+                        push("odd");
+                        printStack();
+                        pop();
+                        printStack();
+                        PL0Lex_get_token(lex);
+                        expression(lex);
+                }
+                else if (lex->last_token_type == TOKEN_NOT){
+                        pop();
+                        push("J");
+                        push("NOT");
+                        printStack();
+                        pop();
+                        printStack();
+                        PL0Lex_get_token(lex);
+                        condition2(lex);
+                }
+                else if (lex->last_token_type == TOKEN_GLPAREN){
+                        pop();
+                        push("GRPAREN");
+                        push("J");
+                        push("GLPAREN");
+                        printStack();
+                        pop();
+                        printStack();
+                        PL0Lex_get_token(lex);
+                        condition2(lex);
+                        PL0Lex_get_token(lex);
+                        if(lex->last_token_type != TOKEN_GRPAREN) {
+                           printf("there must be '}' to match '{}'\n");
+                        }
+                        pop();
+                        printStack();
+                }
+                else {
+                        pop();
+                        push("D");
+                        push("Y");
+                        push("D");
+                        printStack();
+                        expression(lex);
+                        PL0Lex_get_token(lex);
+                        if(lex->last_token_type == TOKEN_EQU || lex->last_token_type == TOKEN_NEQ || lex->last_token_type == TOKEN_LES || lex->last_token_type == TOKEN_LEQ || lex->last_token_type == TOKEN_GTR || lex->last_token_type == TOKEN_GEQ){
+                            pop();
+                            switch(lex->last_token_type)
+                            {
+                                case TOKEN_EQU :push("EQU");printStack();break;
+                                case TOKEN_NEQ :push("NEQ");printStack();break;
+                                case TOKEN_LES :push("LES");printStack();break;
+                                case TOKEN_LEQ :push("LEQ");printStack();break;
+                                case TOKEN_GTR :push("GTR");printStack();break;
+                                case TOKEN_GEQ :push("GEQ");printStack();break;
+                            }
+                            pop();
+                            printStack();
+                            PL0Lex_get_token(lex);
+                            expression(lex);
+                        }
+                        else{
+                            printf("there must be a compera symbol\n");
+                            pop();
+                            pop();
+                            printStack();
+                        }
+                }
+        }
+        else {
+                printf("It is not a condition\n");
+                pop();
+                printStack();
+        }
+}
+
+
+
+
+
+//condition()
+if (lex->last_token_type == TOKEN_IDENTIFIER || lex->last_token_type == TOKEN_NUMBER || lex->last_token_type == TOKEN_MINUS || lex->last_token_type == TOKEN_LPAREN  || lex->last_token_type == TOKEN_GLPAREN || lex->last_token_type == TOKEN_ODD) {
+        pop();
+        push("T");
+        push("J");
+        printStack();
+        condition2(lex);
+        PL0Lex_get_token(lex);
+        while(lex->last_token_type == TOKEN_AND || lex->last_token_type == TOKEN_OR){
+                pop();
+                if(lex->last_token_type == TOKEN_AND)
+                        push("AND");
+                else
+                        push("OR");
+                PL0Lex_get_token(lex);
+                if (lex->last_token_type == TOKEN_IDENTIFIER || lex->last_token_type == TOKEN_NUMBER || lex->last_token_type == TOKEN_MINUS || lex->last_token_type == TOKEN_LPAREN  || lex->last_token_type == TOKEN_GLPAREN || lex->last_token_type == TOKEN_NOT) {
+                        char *a=pop();
+                        push("T");
+                        push("J");
+                        push(a);
+                        printStack();
+                        pop();
+                        printStack();
+                        condition2(lex);
+                        PL0Lex_get_token(lex);
+                }
+                else {
+                        printf("It is not a condition\n");
+                        pop();
+                        printStack();
+                }
+        }
+        pop();
+        printStack();
+        fseek(fin,lex->bposition - lex->eposition - 1,1);
+}
+else {
+        printf("It is not a condition\n");
+        pop();
+        printStack();
+}
