@@ -1,0 +1,607 @@
+=== This is the program for PL/0 testing ===
+--- Lexical Analysis testing ---
+ $ A 
+ $ . B 
+ $ . B S 
+analysis the program block
+ $ . B S SEMICOLON V const 
+ $ . B S SEMICOLON V 
+ $ . B S SEMICOLON E number := ident 
+ $ . B S SEMICOLON E number := 
+ $ . B S SEMICOLON E number 
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+ $ . B S SEMICOLON E number := ident 
+ $ . B S SEMICOLON E number := 
+ $ . B S SEMICOLON E number 
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON 
+ $ . B S 
+ $ . B S SEMICOLON V var 
+ $ . B S SEMICOLON V 
+ $ . B S SEMICOLON E ident 
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+ $ . B S SEMICOLON E ident 
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+ $ . B S SEMICOLON E ident 
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+ $ . B S SEMICOLON E ident 
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON V COMMA 
+ $ . B S SEMICOLON V 
+ $ . B S SEMICOLON E ident 
+ $ . B S SEMICOLON E 
+ $ . B S SEMICOLON 
+ $ . B S 
+ $ . B S SEMICOLON S SEMICOLON ident PROCEDURE 
+ $ . B S SEMICOLON S SEMICOLON ident 
+ $ . B S SEMICOLON S SEMICOLON 
+ $ . B S SEMICOLON S 
+analysis the program block
+ $ . B S SEMICOLON S SEMICOLON V var 
+ $ . B S SEMICOLON S SEMICOLON V 
+ $ . B S SEMICOLON S SEMICOLON E ident 
+ $ . B S SEMICOLON S SEMICOLON E 
+ $ . B S SEMICOLON S SEMICOLON V COMMA 
+ $ . B S SEMICOLON S SEMICOLON V 
+ $ . B S SEMICOLON S SEMICOLON E ident 
+ $ . B S SEMICOLON S SEMICOLON E 
+ $ . B S SEMICOLON S SEMICOLON 
+ $ . B S SEMICOLON S 
+ $ . B S SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O begin 
+ $ . B S SEMICOLON end O 
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := ident 
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := ident 
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := ident 
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON P do J while 
+ $ . B S SEMICOLON end O SEMICOLON P do J 
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON P do D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do D Y Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON P do D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON P do D GTR 
+ $ . B S SEMICOLON end O SEMICOLON P do D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON P do Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do 
+end of expression
+end of condition
+ $ . B S SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O begin 
+ $ . B S SEMICOLON end O SEMICOLON end O 
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then J if 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then J 
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D odd 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then 
+end of expression
+end of condition
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I PLUS 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H TIMES 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H SLASH 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q number 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end 
+end of statement sequence
+ $ . B S SEMICOLON end O SEMICOLON 
+end of statement
+end of statement
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end 
+end of statement sequence
+ $ . B S SEMICOLON 
+end of statement
+end of program blook
+ $ . B S 
+ $ . B S SEMICOLON S SEMICOLON ident PROCEDURE 
+ $ . B S SEMICOLON S SEMICOLON ident 
+ $ . B S SEMICOLON S SEMICOLON 
+ $ . B S SEMICOLON S 
+analysis the program block
+ $ . B S SEMICOLON S SEMICOLON V var 
+ $ . B S SEMICOLON S SEMICOLON V 
+ $ . B S SEMICOLON S SEMICOLON E ident 
+ $ . B S SEMICOLON S SEMICOLON E 
+ $ . B S SEMICOLON S SEMICOLON V COMMA 
+ $ . B S SEMICOLON S SEMICOLON V 
+ $ . B S SEMICOLON S SEMICOLON E ident 
+ $ . B S SEMICOLON S SEMICOLON E 
+ $ . B S SEMICOLON S SEMICOLON 
+ $ . B S SEMICOLON S 
+ $ . B S SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O begin 
+ $ . B S SEMICOLON end O 
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := ident 
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON D := ident 
+ $ . B S SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON P do J while 
+ $ . B S SEMICOLON end O SEMICOLON P do J 
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON P do D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do D Y Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON P do D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON P do D NEQ 
+ $ . B S SEMICOLON end O SEMICOLON P do D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON P do Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON P do Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON P do Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON P do Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON P do Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON P do 
+end of expression
+end of condition
+ $ . B S SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O begin 
+ $ . B S SEMICOLON end O SEMICOLON end O 
+analysis the statement sequence
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then J if 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then J 
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D Y Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D LES 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then 
+end of expression
+end of condition
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I MINUS 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON p 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then J if 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then J 
+analysis the condition expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D Y D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D Y Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D Y Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D Y Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D Y Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D Y Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D Y 
+end of expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D LES 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P then 
+end of expression
+end of condition
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON P 
+analysis the statement
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D := 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON D 
+analysis the expression
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I MINUS 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z I 
+analysis the term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q ident 
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z Q 
+end of factor
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON Z 
+end of term
+ $ . B S SEMICOLON end O SEMICOLON end O SEMICOLON 
+end of expression
+end of statement
+end of statement
+ $ . B S SEMICOLON end O SEMICOLON end O 
+ $ . B S SEMICOLON end O SEMICOLON end 
+end of statement sequence
+ $ . B S SEMICOLON end O SEMICOLON 
+end of statement
+end of statement
+ $ . B S SEMICOLON end O 
+ $ . B S SEMICOLON end 
+end of statement sequence
+ $ . B S SEMICOLON 
+end of statement
+end of program blook
+ $ . B S 
+ $ . B P 
+analysis the statement
+ $ . B end O begin 
+ $ . B end O 
+analysis the statement sequence
+ $ . B end O SEMICOLON P 
+analysis the statement
+ $ . B end O SEMICOLON D := ident 
+ $ . B end O SEMICOLON D := 
+ $ . B end O SEMICOLON D 
+analysis the expression
+ $ . B end O SEMICOLON Z I 
+analysis the term
+ $ . B end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B end O SEMICOLON Z Q ident 
+ $ . B end O SEMICOLON Z Q 
+end of factor
+ $ . B end O SEMICOLON Z 
+end of term
+ $ . B end O SEMICOLON 
+end of expression
+end of statement
+ $ . B end O 
+ $ . B end O SEMICOLON p 
+analysis the statement
+ $ . B end O SEMICOLON D := ident 
+ $ . B end O SEMICOLON D := 
+ $ . B end O SEMICOLON D 
+analysis the expression
+ $ . B end O SEMICOLON Z I 
+analysis the term
+ $ . B end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B end O SEMICOLON Z Q ident 
+ $ . B end O SEMICOLON Z Q 
+end of factor
+ $ . B end O SEMICOLON Z 
+end of term
+ $ . B end O SEMICOLON 
+end of expression
+end of statement
+ $ . B end O 
+ $ . B end O SEMICOLON p 
+analysis the statement
+ $ . B end O SEMICOLON ident call 
+ $ . B end O SEMICOLON ident 
+ $ . B end O SEMICOLON 
+end of statement
+ $ . B end O 
+ $ . B end O SEMICOLON p 
+analysis the statement
+ $ . B end O SEMICOLON D := ident 
+ $ . B end O SEMICOLON D := 
+ $ . B end O SEMICOLON D 
+analysis the expression
+ $ . B end O SEMICOLON Z I 
+analysis the term
+ $ . B end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B end O SEMICOLON Z Q number 
+ $ . B end O SEMICOLON Z Q 
+end of factor
+ $ . B end O SEMICOLON Z 
+end of term
+ $ . B end O SEMICOLON 
+end of expression
+end of statement
+ $ . B end O 
+ $ . B end O SEMICOLON p 
+analysis the statement
+ $ . B end O SEMICOLON D := ident 
+ $ . B end O SEMICOLON D := 
+ $ . B end O SEMICOLON D 
+analysis the expression
+ $ . B end O SEMICOLON Z I 
+analysis the term
+ $ . B end O SEMICOLON Z Q H 
+analysis the factor
+ $ . B end O SEMICOLON Z Q number 
+ $ . B end O SEMICOLON Z Q 
+end of factor
+ $ . B end O SEMICOLON Z 
+end of term
+ $ . B end O SEMICOLON 
+end of expression
+end of statement
+ $ . B end O 
+ $ . B end O SEMICOLON p 
+analysis the statement
+ $ . B end O SEMICOLON ident call 
+ $ . B end O SEMICOLON ident 
+ $ . B end O SEMICOLON 
+end of statement
+ $ . B end O 
+ $ . B end 
+end of statement sequence
+ $ . B 
+end of statement
+end of program blook
+ $ . 
+ $ 
+the program has been analysised
+=== Normal end for testing. ===
