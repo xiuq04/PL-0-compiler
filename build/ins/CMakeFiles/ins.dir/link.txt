@@ -1,0 +1,2 @@
+/usr/bin/ar cr libins.a  CMakeFiles/ins.dir/ins.c.o
+/usr/bin/ranlib libins.a

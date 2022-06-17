@@ -1,0 +1,6 @@
+/home/zmm/pl0compiler/build/CMakeFiles/PL0.dir
+/home/zmm/pl0compiler/build/common/CMakeFiles/common.dir
+/home/zmm/pl0compiler/build/error/CMakeFiles/error.dir
+/home/zmm/pl0compiler/build/ins/CMakeFiles/ins.dir
+/home/zmm/pl0compiler/build/lex/CMakeFiles/lex.dir
+/home/zmm/pl0compiler/build/syntax/CMakeFiles/tax.dir
